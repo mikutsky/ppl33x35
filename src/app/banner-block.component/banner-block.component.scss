@@ -1,0 +1,43 @@
+@import "src/styles/const";
+
+:host {
+  display: block;
+  min-height: 240px;
+  color: $bg-color;
+  background: radial-gradient(
+    farthest-corner at 40px 40px,
+    $color-primary 0%,
+    #ffba73 100%
+  );
+  padding: 32px 0;
+  margin-bottom: 48px;
+}
+
+.article {
+  min-width: 430px;
+  max-width: 600px;
+  margin-right: 15px;
+}
+
+.clipart {
+  min-width: 240px;
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .media-container {
+    flex-direction: column;
+
+    .clipart {
+      min-width: 40px;
+      max-width: 160px;
+      margin: 0 auto 16px;
+    }
+
+    .article {
+      text-align: center;
+      max-width: 100%;
+      margin-right: 0;
+    }
+  }
+}

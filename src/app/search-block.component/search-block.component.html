@@ -1,0 +1,40 @@
+<div class="container">
+  <h2 class="mb-8">{{ title }}</h2>
+  <h4 class="mb-24">{{ subtitle }}</h4>
+  <form
+    class="search-form"
+    (submit)="onSubmit(); $event.preventDefault()"
+    (reset)="onReset(); $event.preventDefault()"
+    [formGroup]="searchForm"
+  >
+    <mat-form-field appearance="fill" class="width-100pr mb-24">
+      <mat-label>{{ label }}</mat-label>
+      <input
+        matInput
+        class="search-control"
+        placeholder="ABCD0123456"
+        value=""
+        [maxlength]="11"
+        formControlName="search"
+      />
+      <button type="reset" mat-icon-button matSuffix>
+        <mat-icon matSuffix>clear</mat-icon>
+      </button>
+      <mat-hint>
+        {{ hint }}
+      </mat-hint>
+    </mat-form-field>
+    <div class="clear-all d-flex f-justify-center">
+      <mat-checkbox formControlName="saveStorage">Save search history or</mat-checkbox>
+      <a (click)="onClear()" >clear at all</a>
+    </div>
+    <button
+      type="submit"
+      class="btn-large-square btn-color-primary"
+      [ngClass]="{ 'btn-disabled': !btnEnabled }"
+    >
+      <mat-icon aria-hidden="false">search</mat-icon>
+      Search
+    </button>
+  </form>
+</div>

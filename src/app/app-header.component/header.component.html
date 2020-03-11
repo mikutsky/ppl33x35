@@ -1,0 +1,26 @@
+<div class="container d-flex f-align-center media-container">
+  <div class="logo d-flex f-align-center">
+    <img src="assets/logo.svg" alt="" />
+    <h1>Container travel</h1>
+  </div>
+  <!-- /.logo -->
+  <nav class="header-nav f-align-self-stretch d-flex f-align-stretch">
+    <a
+      *ngFor="let menuItem of mineMenu"
+      [routerLink]="menuItem.href"
+      [ngClass]="{ selected: menuItem == selectedItem }"
+      (click)="onSelectItem(menuItem)"
+    >
+      {{ menuItem.name }}
+    </a>
+  </nav>
+  <!-- /.header-nav -->
+  <nav class="header-nav-button">
+    <button mat-button class="menu-butto">
+      <mat-icon class="icon f-align-self-center" matSuffix [inline]="true">
+        menu
+      </mat-icon>
+    </button>
+  </nav>
+  <!-- /.header-nav-button -->
+</div>

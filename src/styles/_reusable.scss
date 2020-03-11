@@ -1,0 +1,99 @@
+.d-flex {
+  display: flex;
+}
+
+.f-row {
+  flex-direction: row;
+}
+
+.f-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.f-justify-center {
+  justify-content: center;
+}
+
+.f-align-center {
+  align-items: center;
+}
+
+.f-align-stretch {
+  align-items: stretch;
+}
+
+.f-align-self-stretch {
+  align-self: stretch;
+}
+
+.f-align-self-center {
+  align-self: center;
+}
+
+.f-wrap {
+  flex-wrap: wrap;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.btn {
+  display: inline-block;
+  color: $bg-color;
+  background: $color-secondary;
+  padding: 8px 16px;
+  border-radius: 35px;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-primary;
+    background-color: $bg-color;
+  }
+
+  > * {
+    vertical-align: middle;
+  }
+}
+
+.btn-large-square {
+  @extend .btn;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 4px;
+}
+
+.btn-color-primary {
+  background: $color-primary;
+
+  &:hover {
+    color: $bg-color;
+    background-color: $color-secondary;
+  }
+}
+
+.col-4 {
+  width: 33.333%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.mb-0 {
+  margin-bottom: 0px !important;
+}
+
+.mb-8 {
+  margin-bottom: 8px !important;
+}
+
+.mb-16 {
+  margin-bottom: 16px !important;
+}
+
+.mb-24 {
+  margin-bottom: 24px !important;
+}

@@ -1,0 +1,21 @@
+<ng-template [ngIf]="show">
+  <div class="shadow"></div>
+  <div class="screen">
+    <div class="message-box media-container">
+      <div class="overHidden">
+        <h2 class="mb-16">{{ messageBox.title }}</h2>
+        <h4 class="mb-0">{{ messageBox.subtitle }}</h4>
+        <p class="mb-24">{{ messageBox.message }}</p>
+      </div>
+      <div class="action">
+        <button
+          type="submit"
+          class="btn-large-square btn-color-primary mb-8"
+          (click)="onClose(); $event.preventDefault()"
+        >
+          {{ button }}
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,10 @@
+@import "src/styles/const";
+
+:host {
+  display: block;
+  color: $bg-color;
+  background-color: $color;
+  text-align: center;
+  padding: 32px 0;
+  box-shadow: 0 -5px 10px rgba($color: $color, $alpha: 0.35);
+}
