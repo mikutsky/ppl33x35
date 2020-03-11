@@ -23,9 +23,9 @@ export class SearchBlockComponent implements OnInit {
   public saveStorage: FormControl;
 
   constructor(
-    public containerService: ContainerService,
-    public storage: StorageService,
-    public messageService: MessageService
+    private containerService: ContainerService,
+    private storage: StorageService,
+    private messageService: MessageService,
   ) {
     this.search = new FormControl("", [
       Validators.pattern("^[a-zA-Z]{4}[0-9]{7}$")
@@ -74,9 +74,9 @@ export class SearchBlockComponent implements OnInit {
       },
       err => {
         this.messageService.show({
-          title: err.name,
-          subtitle: err.statusText,
-          message: err.message
+          title: "HttpErrorResponse",
+          subtitle: "Http failure response",
+          message: JSON.stringify(err)
         });
       }
     );

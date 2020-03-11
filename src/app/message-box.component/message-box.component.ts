@@ -15,7 +15,7 @@ export class MessageBoxComponent implements OnInit, OnDestroy {
 
   private stream: Subscription;
 
-  constructor(public messageService: MessageService) {}
+  constructor(private messageService: MessageService) {}
 
   ngOnInit(): void {
     this.stream = this.messageService.messageStream.subscribe(messageBox => {

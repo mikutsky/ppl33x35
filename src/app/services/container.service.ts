@@ -33,5 +33,5 @@ export class ContainerService {
     return calcNum === controlNum;
   }
 
-  constructor(public http: HttpClient) {}
+  constructor(private http: HttpClient) {}
 }

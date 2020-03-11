@@ -17,7 +17,7 @@ export class HistoryBlockComponent implements OnInit, OnDestroy {
     return this.records.length > 1;
   }
 
-  constructor(public storageService: StorageService) {
+  constructor(private storageService: StorageService) {
     this.records = storageService.snapshot();
     this.selectedItem = this.records[0];
   }
