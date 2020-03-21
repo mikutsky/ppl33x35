@@ -1,0 +1,13 @@
+<div class="container">
+  <h2 class="mb-8">{{ title }}</h2>
+  <h4 class="mb-24">{{ subtitle }}</h4>
+  <div class="d-flex media-container">
+    <div class="clipart">
+      <img src="assets/search-conteiner.svg" alt="" />
+    </div>
+    <div class="article">
+      <p *ngFor="let paragraph of article">{{ paragraph }}</p>
+      <a routerLink="{{ link.href }}" class="mb-24">{{ link.name }}</a>
+    </div>
+  </div>
+</div>

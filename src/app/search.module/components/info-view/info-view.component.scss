@@ -1,0 +1,88 @@
+@import "src/styles/const";
+
+:host {
+  display: block;
+  text-align: left;
+  color: $bg-color;
+  background-color: $color-primary;
+  padding: 48px 32px;
+}
+
+.card {
+  color: $color;
+  &:nth-child(even) {
+    background-color: $color-primary-light-2;
+  }
+  &:nth-child(odd) {
+    background-color: $color-primary;
+  }
+  padding: 8px;
+  overflow: hidden;
+
+  .icon {
+    width: 36px;
+    font-size: 2.25em;
+    line-height: 1.0556;
+    margin-right: 8px;
+  }
+
+  .info {
+    width: 50%;
+  }
+
+  .info-from,
+  .info-to {
+    width: 100%;
+  }
+
+  .port {
+    width: 100%;
+    margin-right: 8px;
+  }
+
+  .date {
+    min-width: 70px;
+    width: 50%;
+    margin-right: 8px;
+  }
+
+  .bold {
+    font-weight: 700;
+  }
+}
+
+.empty-warning {
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  :host {
+    padding: 24px 16px;
+  }
+
+  .media-container {
+    flex-direction: column;
+
+    .info {
+      width: 100%;
+    }
+    .info-from,
+    .info-to {
+      margin: 8px 0;
+    }
+    .date {
+      width: 80px;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  :host {
+    padding: 24px 16px;
+    margin-bottom: -32px;
+  }
+
+  .card {
+    margin: 0 -15px;
+  }
+}

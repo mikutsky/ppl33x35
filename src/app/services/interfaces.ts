@@ -26,7 +26,7 @@ export interface IContainerInfoResponse {
 }
 
 export interface IMessageBox {
-  title: string;
+  title?: string;
   subtitle?: string;
-  message: string;
+  message?: string;
 }

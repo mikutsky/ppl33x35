@@ -5,7 +5,6 @@ import {
   IStorageContainerRecord,
   IContainerInfo
 } from "src/app/services/interfaces";
-import { identifierModuleUrl } from "@angular/compiler";
 
 const _storageKey = "responseList";
 const _maxLength = 16;
@@ -14,7 +13,7 @@ const _maxLength = 16;
   providedIn: "root"
 })
 export class StorageService {
-  private _enabeled: Boolean = true;
+  private _enabeled: boolean = true;
 
   private get _genId(): string {
     const rand = Math.random();
@@ -24,7 +23,7 @@ export class StorageService {
   }
 
   private get _dateTime(): string {
-    return formatDate(new Date(), "MMM d, y, hh:mm:ss", "en-US");
+    return formatDate(new Date(), "MMM d, y, HH:mm:ss", "en-US");
   }
 
   private set _storage(storageArray: Array<IStorageContainerRecord>) {
@@ -38,12 +37,11 @@ export class StorageService {
     this.snapshotStream.next(this.snapshot());
   }
 
-  set setEnabled(enable: Boolean) {
+  set setEnabled(enable: boolean) {
     this._enabeled = enable;
-    this._storage = this.snapshot();
   }
 
-  get getEnabled(): Boolean {
+  get getEnabled(): boolean {
     return this._enabeled;
   }
 

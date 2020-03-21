@@ -2,25 +2,20 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 
 import { MatIconModule } from "@angular/material/icon";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
-import { MatButtonModule } from "@angular/material/button";
-import { MatBadgeModule } from "@angular/material/badge";
-import { MatCheckboxModule } from "@angular/material/checkbox";
 
-import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 
+import { HomeModule } from "./home.module/home.module";
+import { SearchModule } from "./search.module/search.module";
+import { AboutModule } from "./about.module/about.module";
+import { ContactsModule } from "./contacts.module/contacts.module";
+
 import { AppComponent } from "./app.component";
-import { HeaderComponent } from "./app-header.component/header.component";
-import { FooterComponent } from "./app-footer.component/footer.component";
-import { BannerBlockComponent } from "./banner-block.component/banner-block.component";
-import { SearchBlockComponent } from "./search-block.component/search-block.component";
-import { HistoryBlockComponent } from "./history-block.component/history-block.component";
-import { InfoViewComponent } from "./info-view.component/info-view.component";
-import { MessageBoxComponent } from "./message-box.component/message-box.component";
+import { HeaderComponent } from "./components/app-header/header.component";
+import { FooterComponent } from "./components/app-footer/footer.component";
+import { MessageBoxComponent } from "./components/app-message-box/message-box.component";
 
 import { StorageService } from "./services/storage.service";
 import { ContainerService } from "./services/container.service";
@@ -31,24 +26,18 @@ import { MessageService } from "./services/message.service";
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    BannerBlockComponent,
-    SearchBlockComponent,
-    HistoryBlockComponent,
-    InfoViewComponent,
     MessageBoxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    MatBadgeModule,
-    MatCheckboxModule
+    HomeModule,
+    SearchModule,
+    AboutModule,
+    ContactsModule,
+    MatIconModule
   ],
   providers: [ContainerService, StorageService, MessageService],
   bootstrap: [AppComponent]

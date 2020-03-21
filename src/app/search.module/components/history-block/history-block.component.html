@@ -1,0 +1,34 @@
+<div class="container media-container">
+  <ng-template [ngIf]="showTabControl">
+    <div class="scroll-bar-hidden">
+      <div class="search-list d-flex">
+        <div
+          class="search-item"
+          *ngFor="let record of records"
+          [ngClass]="{ selected: record == selectedItem }"
+          (click)="onSelectItem(record)"
+        >
+          <div class="clipart">
+            <img src="assets/history-container.svg" alt="" />
+            <button
+              mat-mini-fab
+              color="basic"
+              class="btn-close"
+              (click)="onRemove(record.id); $event.stopPropagation()"
+            >
+              <mat-icon class="icon" matSuffix>
+                clear
+              </mat-icon>
+            </button>
+          </div>
+          <h4 class="mb-0">{{ record.container.id }}</h4>
+          <p class="mb-0">{{ record.container.owner }}</p>
+        </div>
+        <!-- /.search-item -->
+      </div>
+      <!-- /.search-list -->
+    </div>
+    <!-- /.scroll-bar-hedden -->
+  </ng-template>
+  <info-view [record]="selectedItem"></info-view>
+</div>

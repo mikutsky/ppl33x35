@@ -35,7 +35,7 @@
 }
 
 .container {
-  max-width: 1140px;
+  max-width: $max-width;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -43,14 +43,21 @@
 .btn {
   display: inline-block;
   color: $bg-color;
+  font-weight: 400;
   background: $color-secondary;
   padding: 8px 16px;
   border-radius: 35px;
   cursor: pointer;
 
-  &:hover {
+  &:not(:disabled):hover {
     color: $color-primary;
     background-color: $bg-color;
+  }
+
+  &:disabled {
+    color: $color-disabled;
+    background-color: $bg-color-disabled;
+    cursor: default;
   }
 
   > * {
@@ -68,10 +75,14 @@
 .btn-color-primary {
   background: $color-primary;
 
-  &:hover {
+  &:not(:disabled):hover {
     color: $bg-color;
     background-color: $color-secondary;
   }
+}
+
+.col-3 {
+  width: 25%;
 }
 
 .col-4 {

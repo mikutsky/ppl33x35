@@ -1,0 +1,88 @@
+@import "src/styles/const";
+
+:host {
+  display: block;
+  position: fixed;
+  width: 100%;
+  background-color: $bg-color;
+  padding: 16px 0;
+  top: 0;
+  box-shadow: 0 5px 10px rgba($color: $color, $alpha: 0.35);
+  z-index: 1;
+}
+
+.logo {
+  color: $color-primary;
+  text-transform: uppercase;
+
+  img {
+    max-height: 48px;
+    margin-right: 8px;
+  }
+}
+
+.header-nav {
+  margin-left: auto;
+  font-weight: 700;
+  user-select: none;
+
+  * {
+    display: block;
+    margin: 16px 0 -16px 30px;
+
+    &.selected {
+      border-bottom: 28px solid $color-primary;
+      &:hover {
+        border-color: $color-secondary;
+      }
+    }
+  }
+}
+
+.header-nav-button {
+  display: none;
+}
+
+@media only screen and (max-width: 992px) {
+  .media-container {
+    h1 {
+      font-size: 1.5em;
+      line-height: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .media-container {
+    .header-nav {
+      display: none;
+    }
+    .header-nav-button {
+      display: block;
+      margin-left: auto;
+
+      .menu-buttom {
+        width: 48px;
+        min-width: 48px;
+        height: 48px;
+        background-color: $bg-color;
+        color: $color-primary;
+        font-size: 2.5em;
+        line-height: 1.15;
+        padding: 0;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .media-container {
+    h1 {
+      max-width: 180px;
+    }
+    .header-nav-button .menu-buttom {
+      line-height: 1.375;
+    }
+  }
+}

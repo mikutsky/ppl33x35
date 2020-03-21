@@ -7,7 +7,8 @@
 body {
   color: $color;
   background-color: $color;
-  min-width: 460px;
+  min-width: $min-width;
+  font-size: 1em;
 }
 
 main {
@@ -32,6 +33,7 @@ img {
 a {
   color: $color-primary;
   text-decoration: none;
+  font-weight: 700;
   &:hover {
     color: $color-secondary;
   }
@@ -40,8 +42,8 @@ a {
 button,
 button:active,
 button:focus {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 1em;
+  line-height: 1.25;
   border: none;
   outline: none;
 }

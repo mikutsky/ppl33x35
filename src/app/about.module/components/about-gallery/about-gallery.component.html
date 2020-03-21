@@ -1,0 +1,7 @@
+<div class="container media-container">
+  <div class="gallery d-flex f-row f-wrap">
+    <div *ngFor="let image of gallery" class="card col-3">
+      <img [src]="image.src" alt="image.title" />
+    </div>
+  </div>
+</div>
